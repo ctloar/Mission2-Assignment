@@ -11,7 +11,7 @@ namespace Mission2_Assignment
 
             // Initialize the variables needed to play the game
             int iNumRolls = int.Parse(Console.ReadLine());
-            int[] iResults = {0,0,0,0,0,0,0,0,0,0,0};
+            int[] iResults = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             Random rnd = new Random();
            
             // Executes logic for every roll based on the number of rolls specified by user
@@ -22,14 +22,17 @@ namespace Mission2_Assignment
                 iResults[iRoll-2] += 1;
             }
 
+            Console.WriteLine("The following results represent percentages:\n");
+
             // Outer loop iterates through each possible outcome (12) to add logic (the count of rolls that added to that number)
-            for(int i=0; i<11; i++)
+            for (int i=0; i<11; i++)
             {
                 string output = "";
                 output = (i + 2) + ": ";
 
-                // Inner loop iterates through each result value in the results array and concatenates * to the output
-                for (int j=0; j<iResults[i]; j++)
+                // Inner loop iterates through each result value in the results array, calculates the percentage value,
+                // and concatenates * to the output
+                for (int j=0; j< (int)((iResults[i] / (double)iNumRolls) * 100); j++)
                 {
                     output = output + "*";
                 }
