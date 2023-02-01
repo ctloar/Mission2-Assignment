@@ -18,8 +18,10 @@ namespace Mission2_Assignment
             // Generates a random number for each roll, and adds/updates that roll into the array of results
             for (int i=1; i<=iNumRolls; i++)
             {
-                int iRoll = rnd.Next(2,13);
-                iResults[iRoll-2] += 1;
+                int iRoll1 = rnd.Next(1,7);
+                int iRoll2 = rnd.Next(1, 7);
+   
+                iResults[(iRoll1 + iRoll2)-2] += 1;
             }
 
             Console.WriteLine("The following results represent percentages:\n");
